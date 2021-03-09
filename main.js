@@ -22,15 +22,6 @@ $(".next1").on("click", function () {
 		$('.f2').show();
 });
 	
-$(".next2").on("click", function () {
-	if (validate2()) {
-		$('.active').next().addClass('active');
-		$('.f1').hide();
-		$('.f2').hide();
-		$('.f3').show();
-	}
-
-});
 
 $(".previous").click(function(){
 	if(animating) return false;
