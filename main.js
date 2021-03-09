@@ -21,8 +21,7 @@ $(".next1").on("click", function () {
 		$('.active').next().addClass('active');
 		$('.f1').hide();
 		$('.f2').show();
-	} else {
-		$('#notify1').html('Fill up the entry first!!');
+
 	}
 });
 	
