@@ -20,10 +20,10 @@ function validate2() {
 	twitter = $("#twitter").val();
 	fb = $("#fb").val();
 	insta = $("#insta").val();
-	if (twitter === '1@gmail.com' && fb === '2@gmail.com' && insta === '3@gmail.com') {
-		return true;
+	if (twitter !== '1@gmail.com' && fb !== '2@gmail.com' && insta !== '3@gmail.com') {
+		return false;
 	}
-	return false;
+	return true;
 }
 
 $(".next1").on("click", function () {
