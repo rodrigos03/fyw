@@ -13,7 +13,7 @@ $(".next").click(function(){
     if($(this).attr('name') ==  'next120') {
 	    next_fs = $('#two');
     }
-    if ($('select[id="city"]').val() == 'kaunas' && $('select[id="agegroup"]').val() == '7-13'  && $('select[id="shift"]').val() == '1stshift'){
+    if ($('select[name="city"]').val() == 'kaunas' && $('select[name="agegroup"]').val() == '7-13'  && $('select[name="shift"]').val() == '1stshift'){
 next_fs = $('#firstField');
     }
 
