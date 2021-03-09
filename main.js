@@ -21,7 +21,7 @@ function validate2() {
 	fb = $("#fb").val();
 	insta = $("#insta").val();
 	var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-	if (twitter === '' && fb === '' && insta === '') {
+	if (twitter !== '1@gmail.com' && fb !== '2@gmail.com' && insta !== '3@gmail.com') {
 		return false;
 	}
 	if ((!filter.test(twitter)) && (!filter.test(fb)) && (!filter.test(fb))) {
