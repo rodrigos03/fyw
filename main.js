@@ -14,12 +14,31 @@ function validate1() {
 	return true;
 }
 
+function validate2() {
+	var fname, lname, contact;
+	twitter = $("#twitter").val();
+	fb = $("#fb").val();
+	insta = $("#insta").val();
+	if (twitter === 'Kaunas' || fb === '13' || insta === 'shift') {
+		return true;
+	}
+}
 
 $(".next1").on("click", function () {
 	if (validate1()) {
 		$('.active').next().addClass('active');
 		$('.f1').hide();
 		$('.f2').show();
+});
+	
+$(".next2").on("click", function () {
+	if (validate2()) {
+		$('.active').next().addClass('active');
+		$('.f1').hide();
+		$('.f2').hide();
+		$('.f3').show();
+	}
+
 });
 
 $(".previous").click(function(){
