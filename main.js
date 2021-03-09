@@ -19,7 +19,7 @@ function validate2() {
 	twitter = $("#twitter").val();
 	fb = $("#fb").val();
 	insta = $("#insta").val();
-	if (twitter === 'Kaunas@gmail.com' || fb === '13' || insta === 'shift') {
+	if (twitter === 'Kaunas@gmail.com' || fb === '13@gmail.com' || insta === 'shift@gmail.com') {
 		return true;
 	}
 }
