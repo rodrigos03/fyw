@@ -32,7 +32,7 @@ function validate2() {
 }
 
 function validate3() {
-	var email, lname, contact;
+	var email;
 	email = $('.email').val();
 	if (email === '') {
 		return false;
