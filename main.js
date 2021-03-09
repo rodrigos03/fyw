@@ -14,15 +14,6 @@ function validate1() {
 	return true;
 }
 
-function validate2() {
-	var fname, lname, contact;
-	twitter = $("#twitter").val();
-	fb = $("#fb").val();
-	insta = $("#insta").val();
-	if (twitter === 'Kaunas@gmail.com' || fb === '13@gmail.com' || insta === 'shift@gmail.com') {
-		return true;
-	}
-}
 
 $(".next1").on("click", function () {
 	if (validate1()) {
