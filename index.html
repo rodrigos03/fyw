@@ -12,23 +12,31 @@
 	<div class="container">
   <form id="msform" method="post" >
 	<!-- progressbar -->
+	<ul id="progressbar">
+		<li class="active">Parents Information</li>
+		<li>Children Information</li>
+		<li>Payment</li>
+                <li>Submission</li>
+	</ul>
 	<!-- fieldsets -->
 <fieldset class="f1">
-                  <h2 class="m_head">Personal Details</h2>
+ <h2 class="m_head">Personal Details</h2>
                   <h4 class="s_head">Tell us something more about you</h4>
                   <div class="form-group">
                      <input type="text" class="form-control fname" name="f_name" placeholder="First Name">
+                  </div>
                   <div class="form-group">
                      <input type="text" class="form-control lname" name="l_name" placeholder="Last Name">
+                  </div>
                   <div class="form-group">
                      <input type="text" class="form-control contact" name="contact" placeholder="Contact">
-
+                  </div>
                   <div class="form-group">
                      <p id="notify1" style="color:blue;"></p>
-                
+                  </div>
                   <div class="form-group" >
-                     <button class="btn btn-primary btn-lg next1">Next</button>
-              
+   <button class="btn btn-primary btn-lg next1">Next</button>
+                  </div>
                </fieldset>
 	  <fieldset class="f2">
                <h2 class="m_head">Social Profiles</h2>
@@ -42,45 +50,66 @@
                   <div class="form-group">
                      <input type="Email"class="form-control" id="insta" name="instagram" placeholder="Instagram">
                   </div>
+                  <div class="form-group">
+                     <p id="notify2" style="color:blue;"></p>
+                  </div>
                   <div class="form-group" >
                      <button class="btn btn-primary btn-lg previous1">Previous</button>
                      <button class="btn btn-primary btn-lg next2 ">Next</button>
                   </div>
                </fieldset>
+		
 <fieldset class="f3">
 <h3 class="fs-subtitle">Kids - By clicking "Continue", you will be direced to Paysera Website to proceed with the payment for your child's ticket.</h3>
-             <div class="form-group">
-                     <input type="Email" class="form-control email" name="email" placeholder="Email" required autofocus>
-                  </div>
-	<div class="form-group">
-	<button class="btn btn-primary btn-lg previous2">Previous</button>
-                     <button class="btn btn-primary btn-lg submit">Submit</button>
-		</div>
+	</div>
+<iframe width="100%"
+    frameborder="0"
+    onload="(function () {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.onload = function() {
+            iFrameResize({ heightCalculationMethod: 'grow' });
+        };
+        s.src = 'http://tickets.paysera.com/compiled/2e97c63552e367ceb1b56ab27e4c2f7c.js';
+        document.body.appendChild(s);
+    })()"
+    src="http://tickets.paysera.com/en/event-widget/ckljfo9hq000a3b6lrmjqfsbj?"
+    allowtransparency="true"
+    scrolling="no">
+</iframe>
+	  <iframe src="http://tickets.paysera.com/en/event-widget/ckljfo9hq000a3b6lrmjqfsbj?" frameborder="0" 
+    allowfullscreen> 
+    </iframe>
+	</div>
+        <input type="submit" name="submit" class="next action-button" value="Submit" >
     </fieldset>
-
 <fieldset class="f4">
 <h3 class="fs-subtitle">Adolescents - By clicking "Continue", you will be direced to Paysera Website to proceed with the payment for your child's ticket.</h3>
-	                  <div class="form-group">
-                     <input type="Email" class="form-control email" name="email" placeholder="Email" required autofocus>
-                  </div>
-	 <div class="form-group">
-	<button class="btn btn-primary btn-lg previous2">Previous</button>
-                     <button class="btn btn-primary btn-lg submit">Submit</button>
-		</div>                          
+ <iframe width="100%"
+    frameborder="0"
+    onload="(function () {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.onload = function() {
+            iFrameResize({ heightCalculationMethod: 'grow' });
+        };
+        s.src = 'https://tickets.paysera.com/compiled/2e97c63552e367ceb1b56ab27e4c2f7c.js';
+        document.body.appendChild(s);
+    })()"
+    src="https://tickets.paysera.com/en/event-widget/ckljfo9hq000a3b6lrmjqfsbj?"
+    allowtransparency="true"
+    scrolling="no">
+</iframe>
+        <input type="submit" name="submit" class="next action-button" value="Submit" />
     </fieldset>
-
 <fieldset class="f5">
  <h2 class="fs-title">Congratulations! The registration was done successfully. Thank you for your time!</h2>
     <input type="button" name="previous" class="previous action-button" value="ADD ANOTHER DELEGATE" />
-
 </fieldset>
-
 </form>
-
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxBJwpUD5cOfdu88nBaq37eUqiYRbdgnHt7dXzh6uCMKNi4QWs/exec'
   const form = document.forms['msform']
-
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -94,5 +123,6 @@
 <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
         </div>
     <script type="text/javascript" src="main.js"></script>
+<script src="https://gist.github.com/DGrv/771dd2b1f9c05d8fcf17f3ff84bfc1f3.js"></script>
 </body>
 </html>
