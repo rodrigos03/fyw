@@ -20,11 +20,19 @@ function validate2() {
 	twitter = $("#twitter").val();
 	fb = $("#fb").val();
 	insta = $("#insta").val();
-	if (twitter !== '1@gmail.com' && fb !== '2@gmail.com' && insta !== '3@gmail.com') {
+	var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	if (twitter === '' && fb === '' && insta === '') {
+		$('#notify2').html('You must enter atleast one social profile email!!');
 		return false;
 	}
+	if ((!filter.test(twitter)) && (!filter.test(fb)) && (!filter.test(fb))) {
+		$('#notify2').html('Enter valid email');
+		return false;
+	}
+
 	return true;
 }
+
 
 $(".next1").on("click", function () {
 	if (validate1()) {
