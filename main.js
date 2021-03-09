@@ -20,6 +20,7 @@ $(".next1").on("click", function () {
 		$('.active').next().addClass('active');
 		$('.f1').hide();
 		$('.f2').show();
+	}
 });
 	
 
