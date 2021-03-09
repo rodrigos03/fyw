@@ -3,6 +3,7 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 
+
 function validate1() {
 	var fname, lname, contact;
 	fname = $(".fname").val();
@@ -20,6 +21,8 @@ $(".next1").on("click", function () {
 		$('.active').next().addClass('active');
 		$('.f1').hide();
 		$('.f2').show();
+	} else {
+		$('#notify1').html('Fill up the entry first!!');
 	}
 });
 	
