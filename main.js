@@ -31,6 +31,14 @@ function validate2() {
 	return true;
 }
 
+function validate3() {
+	var email, lname, contact;
+	email = $('.email').val();
+	if (email === '') {
+		return false;
+	}
+	return true;
+}
 
 $(".next1").on("click", function () {
 	if (validate1()) {
@@ -47,6 +55,15 @@ $(".next2").on("click", function () {
 		$('.f1').hide();
 		$('.f2').hide();
 		$('.f3').show();
+	}
+
+});
+
+$(".submit").on("click", function () {
+	if (validate3()) {
+		$('.previous2').fadeOut(500);
+		$('.submit').fadeOut(500);
+		$('#notify3').html('Successfully Submitted');
 	}
 
 });
