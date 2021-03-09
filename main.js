@@ -10,12 +10,12 @@ $(".next").click(function(){
 
 	current_fs = $(this).parent();
 
-    if($(this).attr('name') ==  'next120') 
+    if($(this).attr('name') ==  'next120') {
 	    next_fs = $('#two');
-
-    if ($('select[id="city"]').val() == 'kaunas' && $('select[id="agegroup"]').val() == '7-13'  && $('select[id="shift"]').val() == '1stshift')
+    }
+    if ($('select[id="city"]').val() == 'kaunas' && $('select[id="agegroup"]').val() == '7-13'  && $('select[id="shift"]').val() == '1stshift'){
 next_fs = $('#firstField');
-
+    }
 
 	//activate next step on progressbar using the index of next_fs
 	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
