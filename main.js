@@ -15,6 +15,16 @@ function validate1() {
 	return true;
 }
 
+function validate2() {
+	var fname, lname, contact;
+	twitter = $("#twitter").val();
+	fb = $("#fb").val();
+	insta = $("#insta").val();
+	if (twitter === '1@gmail.com' && fb === '2@gmail.com' && insta === '3@gmail.com') {
+		return false;
+	}
+	return true;
+}
 
 $(".next1").on("click", function () {
 	if (validate1()) {
@@ -24,7 +34,16 @@ $(".next1").on("click", function () {
 
 	}
 });
-	
+
+$(".next2").on("click", function () {
+	if (validate2()) {
+		$('.active').next().addClass('active');
+		$('.f1').hide();
+		$('.f2').hide();
+		$('.f3').show();
+	}
+
+});
 
 $(".previous").click(function(){
 	if(animating) return false;
