@@ -3,45 +3,26 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 
-$(".next").click(function(){
+function validate1() {
+	var fname, lname, contact;
+	fname = $(".fname").val();
+	lname = $(".lname").val();
+	contact = $(".contact").val();
+	if (fname === '' || lname === '' || contact === '') {
+		return false;
+	}
+	return true;
+}
 
-	if(animating) return false;
-	animating = true;
 
-	current_fs = $(this).parent();
-
-    if($(this).attr('name') ==  'next120') 
-	    next_fs = $('#two');
-
-    if($(this).attr('name') ==  'next2') 
-	    next_fs = $('#firstField');
-
-	//activate next step on progressbar using the index of next_fs
-	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-	
-	//show the next fieldset
-	next_fs.show(); 
-	//hide the current fieldset with style
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale current_fs down to 80%
-			scale = 1 - (1 - now) * 0.2;
-			//2. bring next_fs from the right(50%)
-			left = (now * 50)+"%";
-			//3. increase opacity of next_fs to 1 as it moves in
-			opacity = 1 - now;
-			current_fs.css({'transform': 'scale('+scale+')'});
-			next_fs.css({'left': left, 'opacity': opacity});
-		}, 
-		duration: 800, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
-	});
+$(".next1").on("click", function () {
+	if (validate1()) {
+		$('.active').next().addClass('active');
+		$('.f1').hide();
+		$('.f2').show();
+	} else {
+		$('#notify1').html('Fill up the entry first!!');
+	}
 });
 
 $(".previous").click(function(){
